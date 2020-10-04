@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:ui_flutter/constants/styles.dart';
 
 AppBar navbarHeader({
@@ -6,6 +7,8 @@ AppBar navbarHeader({
   String title, 
   Color backgroundColor,
   bool brightness = false,
+  bool customIcon = false,
+  SvgPicture icon,
 }) {
   return AppBar(
     backgroundColor: isTransparent ? Colors.transparent : backgroundColor,
@@ -19,7 +22,7 @@ AppBar navbarHeader({
       ),
     leading: Builder(
       builder: (context) => IconButton(
-        icon: Icon(Icons.menu),
+        icon: customIcon ? icon : Icon(Icons.menu),
         color: brightness ? Colors.white : iconColor,
         onPressed: () => Scaffold.of(context).openDrawer()
       ),

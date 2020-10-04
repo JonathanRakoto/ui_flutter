@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ui_flutter/components/button/button_wallet.dart';
-import 'package:ui_flutter/components/card/card_wallet.dart';
+import 'package:ui_flutter/components/button/wallet/index.dart';
+import 'package:ui_flutter/components/card/wallet/index.dart';
 import 'package:ui_flutter/constants/size.dart';
 import 'package:ui_flutter/constants/styles.dart';
 

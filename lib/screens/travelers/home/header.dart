@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ui_flutter/constants/size.dart';
 import 'package:ui_flutter/components/search_bar.dart';
 
-class HomeHeader extends StatelessWidget {
-  const HomeHeader({
+class TravelerHeader extends StatelessWidget {
+  const TravelerHeader({
     Key key,
   }) : super(key: key);
 

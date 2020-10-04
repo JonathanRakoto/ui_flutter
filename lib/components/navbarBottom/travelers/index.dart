@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ui_flutter/components/navbarBottom/navbar_item.dart';
+import 'package:ui_flutter/components/navbarBottom/travelers/item.dart';
 import 'package:ui_flutter/constants/styles.dart';
 import 'package:ui_flutter/constants/size.dart';
-import 'package:ui_flutter/screens/travel/index.dart';
+import 'package:ui_flutter/screens/travelers/travel/index.dart';
 
 class NavbarBottom extends StatelessWidget {
   const NavbarBottom({

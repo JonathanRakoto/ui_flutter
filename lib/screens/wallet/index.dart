@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ui_flutter/components/navbarBottom/navbar_wallet.dart';
+import 'package:ui_flutter/components/navbarBottom/wallet/index.dart';
 import 'package:ui_flutter/constants/styles.dart';
-import 'package:ui_flutter/components/navbarHeader/navbar.dart';
+import 'package:ui_flutter/components/common/navbar.dart';
 import 'package:ui_flutter/components/drawer_menu.dart';
 import 'body.dart';
 

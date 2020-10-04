@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:ui_flutter/components/card/image.dart';
+import 'package:ui_flutter/components/card/travelers/image.dart';
 import 'package:ui_flutter/constants/size.dart';
 import 'package:ui_flutter/constants/styles.dart';
 import 'package:ui_flutter/models/TravelSpot.dart';

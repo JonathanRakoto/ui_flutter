@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ui_flutter/screens/wallet/index.dart';
-import 'package:ui_flutter/screens/home/index.dart';
+import 'package:ui_flutter/screens/movie/home/index.dart';
+import 'package:ui_flutter/screens/travelers/home/index.dart';
 
 class DrawerMenu extends StatelessWidget {
   @override
@@ -25,7 +26,7 @@ class DrawerMenu extends StatelessWidget {
             trailing: Icon(FontAwesomeIcons.plane),
             onTap: () {
               Navigator.push(context,
-                MaterialPageRoute(builder: (context) => HomeScreen()));
+                MaterialPageRoute(builder: (context) => TravelersScreen()));
             }
           ),
           Divider(),
@@ -41,7 +42,10 @@ class DrawerMenu extends StatelessWidget {
           ListTile(
             title: Text('Movie'),
             trailing: Icon(Icons.movie),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context) => MovieScreen()));
+            },
           ),
           Divider(),
           ListTile(

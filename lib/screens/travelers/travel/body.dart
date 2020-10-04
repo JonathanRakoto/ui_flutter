@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ui_flutter/components/card/card_travelers.dart';
+import 'package:ui_flutter/components/card/travelers/index.dart';
 import 'package:ui_flutter/constants/size.dart';
 import 'package:ui_flutter/constants/styles.dart';
 import 'package:ui_flutter/models/TravelSpot.dart';
