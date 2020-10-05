@@ -7,8 +7,10 @@ AppBar navbarHeader({
   String title, 
   Color backgroundColor,
   bool brightness = false,
-  bool customIcon = false,
-  SvgPicture icon,
+  bool customLeadingIcon = false,
+  bool customActionsIcon = false,
+  SvgPicture leadingIcon,
+  actionsIcon,
 }) {
   return AppBar(
     backgroundColor: isTransparent ? Colors.transparent : backgroundColor,
@@ -22,12 +24,13 @@ AppBar navbarHeader({
       ),
     leading: Builder(
       builder: (context) => IconButton(
-        icon: customIcon ? icon : Icon(Icons.menu),
-        color: brightness ? Colors.white : iconColor,
+        icon: customLeadingIcon ? leadingIcon : Icon(Icons.menu),
+        color: Theme.of(context).iconTheme.color,
         onPressed: () => Scaffold.of(context).openDrawer()
       ),
     ),
     actions: [
+      customActionsIcon ? actionsIcon : 
       IconButton(
           icon: ClipOval(child: Image.asset('assets/images/profile.png')),
           onPressed: () {})

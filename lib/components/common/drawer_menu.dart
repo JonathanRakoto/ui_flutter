@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
+import 'package:ui_flutter/models/my_theme_provider.dart';
+import 'package:ui_flutter/screens/clock/index.dart';
 import 'package:ui_flutter/screens/wallet/index.dart';
 import 'package:ui_flutter/screens/movie/home/index.dart';
 import 'package:ui_flutter/screens/travelers/home/index.dart';
@@ -13,11 +17,28 @@ class DrawerMenu extends StatelessWidget {
           Container(
             height: 100,
             child: DrawerHeader(
-              child: Text('UI Flutter Library',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                )
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('UI Flutter Library',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    )
+                  ),
+                  Consumer<MyThemeModel>(
+                    builder: (context, theme, child) => GestureDetector(
+                    onTap: () => theme.changeTheme(),
+                    child: SvgPicture.asset(
+                      theme.isLightTheme
+                      ? 'assets/icons/Sun.svg'
+                      : 'assets/icons/Moon.svg',
+                    height: 24,
+                    width: 24,
+                    color: Theme.of(context).primaryColor),
+                  )
+              )
+                ],
               ),
             ),
           ),
@@ -63,7 +84,10 @@ class DrawerMenu extends StatelessWidget {
           ListTile(
             title: Text('Clock'),
             trailing: Icon(Icons.access_time),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context) => ClockScreen()));
+            },
           ),
         ],
       )

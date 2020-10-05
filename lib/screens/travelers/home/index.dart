@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ui_flutter/components/drawer_menu.dart';
+import 'package:ui_flutter/components/common/drawer_menu.dart';
 import 'package:ui_flutter/components/navbarBottom/travelers/index.dart';
 import 'package:ui_flutter/components/common/navbar.dart';
 import 'package:ui_flutter/constants/size.dart';
