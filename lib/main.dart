@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ui_flutter/constants/theme.dart';
-import 'package:ui_flutter/models/my_theme_provider.dart';
+import 'package:ui_flutter/models/theme.dart';
 import 'package:ui_flutter/routes.dart';
-import 'package:ui_flutter/screens/auth/splash/index.dart';
+import 'package:ui_flutter/screens/splash/index.dart';
 
 void main() {
   runApp(App());
@@ -14,8 +14,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => MyThemeModel(),
-      child: Consumer<MyThemeModel>(
+      create: (context) => ThemeModel(),
+      child: Consumer<ThemeModel>(
         builder: (context, theme, child) => MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'UI Flutter Library',

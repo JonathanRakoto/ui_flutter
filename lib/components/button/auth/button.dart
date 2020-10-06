@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ui_flutter/constants/size.dart';
 import 'package:ui_flutter/constants/styles.dart';
 
-class SplashButton extends StatelessWidget {
-  const SplashButton({
+class DefaultButton extends StatelessWidget {
+  const DefaultButton({
     Key key, this.text, this.press,
   }) : super(key: key);
 

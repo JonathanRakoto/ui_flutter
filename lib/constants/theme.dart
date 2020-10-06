@@ -25,6 +25,7 @@ ThemeData themeData(BuildContext context) {
       headline4: TextStyle(color: titleTextClockLightColor, fontSize: 32),
       headline1: TextStyle(color: titleTextClockLightColor, fontSize: 80),
     ),
+    inputDecorationTheme: inputDecorationTheme(),
     visualDensity: VisualDensity.adaptivePlatformDensity,
   );
 }
@@ -50,8 +51,28 @@ ThemeData darkThemeData(BuildContext context) {
       headline4: TextStyle(color: titleTextClockDarkColor, fontSize: 32),
       headline1: TextStyle(color: titleTextClockDarkColor, fontSize: 80),
     ),
+    inputDecorationTheme: inputDecorationTheme(),
     visualDensity: VisualDensity.adaptivePlatformDensity,
   );
 }
 
 AppBarTheme appBarTheme = AppBarTheme(color: Colors.transparent, elevation: 0);
+
+InputDecorationTheme inputDecorationTheme() {
+  return InputDecorationTheme(
+    floatingLabelBehavior: FloatingLabelBehavior.always,
+    contentPadding: EdgeInsets.symmetric(horizontal: 42, vertical: 20),
+    enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(28),
+        borderSide: BorderSide(color: textColor),
+        gapPadding: 10),
+    focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(28),
+        borderSide: BorderSide(color: textColor),
+        gapPadding: 10),
+    focusedErrorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(28),
+        borderSide: BorderSide(color: primaryAuthColor),
+        gapPadding: 10),
+  );
+}

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:ui_flutter/components/button/splash/button.dart';
+import 'package:ui_flutter/components/button/auth/button.dart';
 import 'package:ui_flutter/components/common/splash/dot.dart';
 import 'package:ui_flutter/components/common/splash/content.dart';
 import 'package:ui_flutter/constants/size.dart';
+import 'package:ui_flutter/screens/auth/login/index.dart';
 
 class BodySplash extends HookWidget {
   final List<Map<String, String>> splashdata = [
@@ -42,8 +43,7 @@ class BodySplash extends HookWidget {
               flex: 2,
               child: Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: getProportionateScreenWidth(20)
-                ),
+                    horizontal: getProportionateScreenWidth(20)),
                 child: Column(
                   children: [
                     Spacer(),
@@ -56,7 +56,12 @@ class BodySplash extends HookWidget {
                       ),
                     ),
                     Spacer(flex: 3),
-                    SplashButton(text: 'Next', press: () {},),
+                    DefaultButton(
+                      text: 'Skip',
+                      press: () {
+                        Navigator.pushNamed(context, LoginScreen.routeName);
+                      },
+                    ),
                     Spacer()
                   ],
                 ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:ui_flutter/models/my_theme_provider.dart';
+import 'package:ui_flutter/models/theme.dart';
 import 'package:ui_flutter/screens/clock/index.dart';
 import 'package:ui_flutter/screens/wallet/index.dart';
 import 'package:ui_flutter/screens/movie/home/index.dart';
@@ -26,7 +26,7 @@ class DrawerMenu extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     )
                   ),
-                  Consumer<MyThemeModel>(
+                  Consumer<ThemeModel>(
                     builder: (context, theme, child) => GestureDetector(
                     onTap: () => theme.changeTheme(),
                     child: SvgPicture.asset(

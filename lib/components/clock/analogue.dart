@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:ui_flutter/components/clock/painter.dart';
 import 'package:ui_flutter/constants/size.dart';
 import 'package:ui_flutter/constants/styles.dart';
-import 'package:ui_flutter/models/my_theme_provider.dart';
+import 'package:ui_flutter/models/theme.dart';
 
 class AnalogueClock extends HookWidget {
   final DateTime _dateTime = DateTime.now();
@@ -51,7 +51,7 @@ class AnalogueClock extends HookWidget {
             top: 50,
             left: 0,
             right: 0,
-            child: Consumer<MyThemeModel>(
+            child: Consumer<ThemeModel>(
               builder: (context, theme, child) => GestureDetector(
                 onTap: () => theme.changeTheme(),
                   child: SvgPicture.asset(
