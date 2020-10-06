@@ -7,6 +7,7 @@ import 'styles.dart';
 ThemeData themeData(BuildContext context) {
   return ThemeData(
     appBarTheme: appBarTheme,
+    fontFamily: 'Muli',
     primaryColor: primaryClockColor,
     accentColor: accentClockLightColor,
     scaffoldBackgroundColor: Colors.white,

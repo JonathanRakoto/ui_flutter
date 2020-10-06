@@ -1,4 +1,54 @@
 import 'package:flutter/material.dart';
+import 'package:ui_flutter/constants/size.dart';
+
+// Authentification
+const primaryAuthColor = Color(0xFFFF7643);
+const primaryAuthLightColor = Color(0xFFFFECDF);
+const primaryAuthGradientColor = LinearGradient(
+  begin: Alignment.topLeft,
+  end: Alignment.bottomRight,
+  colors: [Color(0xFFFFA53E), Color(0xFFFF7643)],
+);
+const secondaryAuthColor = Color(0xFF979797);
+const textAuthColor = Color(0xFF757575);
+
+const animationAuthDuration = Duration(milliseconds: 200);
+
+final headingStyle = TextStyle(
+  fontSize: getProportionateScreenWidth(28),
+  fontWeight: FontWeight.bold,
+  color: Colors.black,
+  height: 1.5,
+);
+
+const defaultDuration = Duration(milliseconds: 250);
+
+// Form Error
+final RegExp emailValidatorRegExp =
+    RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+const String emailNullError = "Please Enter your email";
+const String invalidEmailError = "Please Enter Valid Email";
+const String passNullError = "Please Enter your password";
+const String shortPassError = "Password is too short";
+const String matchPassError = "Passwords don't match";
+const String namelNullError = "Please Enter your name";
+const String phoneNumberNullError = "Please Enter your phone number";
+const String addressNullError = "Please Enter your address";
+
+final otpInputDecoration = InputDecoration(
+  contentPadding:
+      EdgeInsets.symmetric(vertical: getProportionateScreenWidth(15)),
+  border: outlineInputBorder(),
+  focusedBorder: outlineInputBorder(),
+  enabledBorder: outlineInputBorder(),
+);
+
+OutlineInputBorder outlineInputBorder() {
+  return OutlineInputBorder(
+    borderRadius: BorderRadius.circular(getProportionateScreenWidth(15)),
+    borderSide: BorderSide(color: textAuthColor),
+  );
+}
 
 // Travelers
 const Color primaryColor = Color(0xFF3E4067);
