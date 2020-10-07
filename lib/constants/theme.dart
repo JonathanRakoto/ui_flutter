@@ -56,23 +56,29 @@ ThemeData darkThemeData(BuildContext context) {
   );
 }
 
-AppBarTheme appBarTheme = AppBarTheme(color: Colors.transparent, elevation: 0);
+AppBarTheme appBarTheme = AppBarTheme(
+    color: Colors.transparent,
+    elevation: 0,
+    iconTheme: IconThemeData(color: Colors.black),
+    textTheme: TextTheme(
+        headline6: TextStyle(color: Color(0xFF8B8B8B), fontSize: 18)));
 
 InputDecorationTheme inputDecorationTheme() {
+  OutlineInputBorder outLineInputBorder= OutlineInputBorder(
+    borderRadius: BorderRadius.circular(28),
+    borderSide: BorderSide(color: textColor),
+    gapPadding: 10
+  );
+  OutlineInputBorder errorOutLineInputBorder= OutlineInputBorder(
+    borderRadius: BorderRadius.circular(28),
+    borderSide: BorderSide(color: primaryAuthColor),
+    gapPadding: 10
+  );
   return InputDecorationTheme(
-    floatingLabelBehavior: FloatingLabelBehavior.always,
+    // floatingLabelBehavior: FloatingLabelBehavior.always,
     contentPadding: EdgeInsets.symmetric(horizontal: 42, vertical: 20),
-    enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(28),
-        borderSide: BorderSide(color: textColor),
-        gapPadding: 10),
-    focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(28),
-        borderSide: BorderSide(color: textColor),
-        gapPadding: 10),
-    focusedErrorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(28),
-        borderSide: BorderSide(color: primaryAuthColor),
-        gapPadding: 10),
+    enabledBorder: outLineInputBorder,
+    focusedBorder: outLineInputBorder,
+    border: errorOutLineInputBorder,
   );
 }

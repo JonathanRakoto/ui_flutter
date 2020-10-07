@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ui_flutter/components/form/auth/login.dart';
 import 'package:ui_flutter/components/form/auth/social.dart';
 import 'package:ui_flutter/constants/size.dart';
-import 'package:ui_flutter/constants/styles.dart';
+import 'package:ui_flutter/screens/auth/forgot_password/no_account.dart';
 
 class BodyLogin extends StatelessWidget {
   @override
@@ -49,24 +49,7 @@ class BodyLogin extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: getProportionateScreenHeight(20)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Don\'t have an account? ',
-                      style: TextStyle(
-                        fontSize: getProportionateScreenWidth(16)
-                      ),
-                    ),
-                    Text(
-                      'Register',
-                      style: TextStyle(
-                        fontSize: getProportionateScreenWidth(16),
-                        color: primaryAuthColor
-                      ),
-                    )
-                  ],
-                )
+                NoAccount()
               ],
             ),
           ),

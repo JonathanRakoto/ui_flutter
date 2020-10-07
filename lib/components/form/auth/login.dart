@@ -5,6 +5,7 @@ import 'package:ui_flutter/components/button/auth/button.dart';
 import 'package:ui_flutter/constants/errors.dart';
 import 'package:ui_flutter/constants/size.dart';
 import 'package:ui_flutter/constants/styles.dart';
+import 'package:ui_flutter/screens/auth/forgot_password/index.dart';
 
 import '../icons/suffix.dart';
 
@@ -44,8 +45,11 @@ class _LoginFormState extends State<LoginForm> {
               ),
               Text('Remember Me'),
               Spacer(),
-              Text('Forgot password',
-                  style: TextStyle(decoration: TextDecoration.underline))
+              GestureDetector(
+                onTap: () => Navigator.pushNamed(context, ForgotPasswordScreen.routeName),
+                child: Text('Forgot password',
+                    style: TextStyle(decoration: TextDecoration.underline)),
+              )
             ],
           ),
           // FormErrors(errors: errors),
@@ -65,6 +69,7 @@ class _LoginFormState extends State<LoginForm> {
   TextFormField buildPasswordFormField(error) {
     return TextFormField(
       obscureText: true,
+      onSaved: (value) => password = value,
       onChanged: (value) {
         if (value.isEmpty)
           setState(() {
@@ -104,6 +109,7 @@ class _LoginFormState extends State<LoginForm> {
   TextFormField buildEmailFormField(error) {
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
+      onSaved: (value) => email = value,
       onChanged: (value) {
         if (value.isEmpty)
           setState(() {
