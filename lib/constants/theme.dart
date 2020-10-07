@@ -50,6 +50,8 @@ ThemeData darkThemeData(BuildContext context) {
       bodyText2: TextStyle(color: bodyTextClockColorDark),
       headline4: TextStyle(color: titleTextClockDarkColor, fontSize: 32),
       headline1: TextStyle(color: titleTextClockDarkColor, fontSize: 80),
+    ).apply(
+      fontFamily: 'Muli',
     ),
     inputDecorationTheme: inputDecorationTheme(),
     visualDensity: VisualDensity.adaptivePlatformDensity,

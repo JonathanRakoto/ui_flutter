@@ -1,13 +1,11 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:ui_flutter/components/button/auth/button.dart';
-import 'package:ui_flutter/constants/errors.dart';
+import 'package:ui_flutter/components/form/field/email.dart';
+import 'package:ui_flutter/components/form/field/password.dart';
 import 'package:ui_flutter/constants/size.dart';
 import 'package:ui_flutter/constants/styles.dart';
 import 'package:ui_flutter/screens/auth/forgot_password/index.dart';
-
-import '../icons/suffix.dart';
+import 'package:ui_flutter/screens/travelers/home/index.dart';
 
 class LoginForm extends StatefulWidget {
   @override
@@ -28,9 +26,15 @@ class _LoginFormState extends State<LoginForm> {
       key: _formKey,
       child: Column(
         children: [
-          buildEmailFormField(errorEmail),
+          buildEmailFormField(
+              error: errorEmail,
+              setErrorState: (value) => setState(() => errorEmail = value),
+              onSaved: (value) => email = value),
           SizedBox(height: getProportionateScreenHeight(30)),
-          buildPasswordFormField(errorPassword),
+          buildPasswordFormField(
+              error: errorPassword,
+              setErrorState: (value) => setState(() => errorPassword = value),
+              onSaved: (value) => password = value),
           SizedBox(height: getProportionateScreenHeight(30)),
           Row(
             children: [
@@ -46,7 +50,8 @@ class _LoginFormState extends State<LoginForm> {
               Text('Remember Me'),
               Spacer(),
               GestureDetector(
-                onTap: () => Navigator.pushNamed(context, ForgotPasswordScreen.routeName),
+                onTap: () => Navigator.pushNamed(
+                    context, ForgotPasswordScreen.routeName),
                 child: Text('Forgot password',
                     style: TextStyle(decoration: TextDecoration.underline)),
               )
@@ -59,90 +64,11 @@ class _LoginFormState extends State<LoginForm> {
             press: () {
               if (_formKey.currentState.validate())
                 _formKey.currentState.save();
+              Navigator.pushNamed(context, TravelersScreen.routeName);
             },
           )
         ],
       ),
-    );
-  }
-
-  TextFormField buildPasswordFormField(error) {
-    return TextFormField(
-      obscureText: true,
-      onSaved: (value) => password = value,
-      onChanged: (value) {
-        if (value.isEmpty)
-          setState(() {
-            errorPassword = passNullError;
-          });
-        else if (value.isNotEmpty && value.length < 6)
-          setState(() {
-            errorPassword = shortPassError;
-          });
-        else
-          setState(() {
-            errorPassword = '';
-          });
-        return null;
-      },
-      validator: (value) {
-        if (value.isEmpty)
-          setState(() {
-            errorPassword = passNullError;
-          });
-        else if (value.length < 6)
-          setState(() {
-            errorPassword = shortPassError;
-          });
-        return null;
-      },
-      decoration: InputDecoration(
-          labelText: error.isNotEmpty ? error : 'Password',
-          hintText: 'Enter your password',
-          suffixIcon: SuffixIconForm(
-              svgIcon: error.isNotEmpty
-                  ? 'assets/icons/Error.svg'
-                  : 'assets/icons/Lock.svg')),
-    );
-  }
-
-  TextFormField buildEmailFormField(error) {
-    return TextFormField(
-      keyboardType: TextInputType.emailAddress,
-      onSaved: (value) => email = value,
-      onChanged: (value) {
-        if (value.isEmpty)
-          setState(() {
-            errorEmail = emailNullError;
-          });
-        else if (value.isNotEmpty && !emailValidatorRegExp.hasMatch(value))
-          setState(() {
-            errorEmail = invalidEmailError;
-          });
-        else
-          setState(() {
-            errorEmail = '';
-          });
-        return null;
-      },
-      validator: (value) {
-        if (value.isEmpty)
-          setState(() {
-            errorEmail = emailNullError;
-          });
-        else if (!emailValidatorRegExp.hasMatch(value))
-          setState(() {
-            errorEmail = invalidEmailError;
-          });
-        return null;
-      },
-      decoration: InputDecoration(
-          labelText: error.isNotEmpty ? error : 'Email',
-          hintText: 'Enter your email',
-          suffixIcon: SuffixIconForm(
-              svgIcon: error.isNotEmpty
-                  ? 'assets/icons/Error.svg'
-                  : 'assets/icons/Mail.svg')),
     );
   }
 }

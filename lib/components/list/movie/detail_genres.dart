@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ui_flutter/components/card/movie/genre.dart';
 import 'package:ui_flutter/constants/size.dart';
 import 'package:ui_flutter/constants/styles.dart';
-import 'package:ui_flutter/models/movie.dart';
+import 'package:ui_flutter/models/movie/movie.dart';
 
 class ListDetailGenres extends StatelessWidget {
   const ListDetailGenres({

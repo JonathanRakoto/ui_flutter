@@ -4,7 +4,7 @@ import 'package:ui_flutter/components/detail/movie/info.dart';
 import 'package:ui_flutter/components/list/movie/casting_crew.dart';
 import 'package:ui_flutter/components/list/movie/detail_genres.dart';
 import 'package:ui_flutter/constants/styles.dart';
-import 'package:ui_flutter/models/movie.dart';
+import 'package:ui_flutter/models/movie/movie.dart';
 
 class BodyDetail extends StatelessWidget {
   const BodyDetail({Key key, this.movie}) : super(key: key);

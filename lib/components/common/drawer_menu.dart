@@ -46,8 +46,7 @@ class DrawerMenu extends StatelessWidget {
             title: Text('Travelers'),
             trailing: Icon(FontAwesomeIcons.plane),
             onTap: () {
-              Navigator.push(context,
-                MaterialPageRoute(builder: (context) => TravelersScreen()));
+              Navigator.pushNamed(context, TravelersScreen.routeName);
             }
           ),
           Divider(),
@@ -55,8 +54,7 @@ class DrawerMenu extends StatelessWidget {
             title: Text('Wallet'),
             trailing: Icon(FontAwesomeIcons.wallet),
             onTap: () {
-              Navigator.push(context,
-                MaterialPageRoute(builder: (context) => WalletScreen()));
+              Navigator.pushNamed(context, WalletScreen.routeName);
             }
           ),
           Divider(),
@@ -64,8 +62,7 @@ class DrawerMenu extends StatelessWidget {
             title: Text('Movie'),
             trailing: Icon(Icons.movie),
             onTap: () {
-              Navigator.push(context,
-                MaterialPageRoute(builder: (context) => MovieScreen()));
+              Navigator.pushNamed(context, MovieScreen.routeName);
             },
           ),
           Divider(),
@@ -76,17 +73,10 @@ class DrawerMenu extends StatelessWidget {
           ),
           Divider(),
           ListTile(
-            title: Text('Login'),
-            trailing: Icon(FontAwesomeIcons.user),
-            onTap: () {}
-          ),
-          Divider(),
-          ListTile(
             title: Text('Clock'),
             trailing: Icon(Icons.access_time),
             onTap: () {
-              Navigator.push(context,
-                MaterialPageRoute(builder: (context) => ClockScreen()));
+              Navigator.pushNamed(context, ClockScreen.routeName);
             },
           ),
         ],

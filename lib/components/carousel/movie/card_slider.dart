@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_flutter/components/card/movie/index.dart';
-import 'package:ui_flutter/models/movie.dart';
+import 'package:ui_flutter/models/movie/movie.dart';
 import 'dart:math' as math;
 
 Widget buildMovieCardSlider(

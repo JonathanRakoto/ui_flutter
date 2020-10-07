@@ -24,20 +24,14 @@ class NavbarBottom extends StatelessWidget {
                   title: 'Travels',
                   icon: 'assets/icons/calendar.svg',
                   press: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => TravelScreen()
-                      )
-                    );
+                    Navigator.pushNamed(context, TravelScreen.routeName);
                   }),
               NavBarItem(
                   title: 'Chat', icon: 'assets/icons/chat.svg', press: () {}),
               NavBarItem(
                   title: 'Friendship',
                   icon: 'assets/icons/friendship.svg',
-                  press: () {}
-              )
+                  press: () {})
             ],
           ),
         ),

@@ -5,6 +5,7 @@ import 'package:ui_flutter/components/common/navbar.dart';
 import 'body.dart';
 
 class TravelScreen extends StatelessWidget {
+  static String routeName = '/travelers/travel';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -6,6 +6,7 @@ import 'package:ui_flutter/components/common/drawer_menu.dart';
 import 'body.dart';
 
 class WalletScreen extends StatelessWidget {
+  static String routeName = '/wallet';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

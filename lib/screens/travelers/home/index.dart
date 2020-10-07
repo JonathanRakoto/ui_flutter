@@ -6,14 +6,13 @@ import 'package:ui_flutter/constants/size.dart';
 import 'body.dart';
 
 class TravelersScreen extends StatelessWidget {
+  static String routeName = '/travelers';
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: navbarHeader(
-        isTransparent: true
-      ),
+      appBar: navbarHeader(isTransparent: true),
       drawer: DrawerMenu(),
       body: BodyHome(),
       bottomNavigationBar: NavbarBottom(),

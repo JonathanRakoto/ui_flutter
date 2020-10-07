@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ui_flutter/constants/styles.dart';
-import 'package:ui_flutter/models/movie.dart';
+import 'package:ui_flutter/models/movie/movie.dart';
 
 class DetailHeaderMovie extends StatelessWidget {
   const DetailHeaderMovie({

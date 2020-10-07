@@ -1,10 +1,22 @@
-# ui_flutter
+# UI Flutter Library (WIP)
 
-A new Flutter project.
+A Flutter project which regroups several Flutter UI design
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To install the project:
+    
+    flutter pub get
+
+Then :
+    
+    flutter run
+
+Enjoy ! 😃
+
+#
+
+## Resources
 
 A few resources to get you started if this is your first Flutter project:
 

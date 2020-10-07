@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ui_flutter/screens/auth/register/index.dart';
 import 'package:ui_flutter/constants/size.dart';
 import 'package:ui_flutter/constants/styles.dart';
-
-import 'index.dart';
 
 class NoAccount extends StatelessWidget {
   const NoAccount({
@@ -16,19 +15,16 @@ class NoAccount extends StatelessWidget {
       children: [
         Text(
           'Don\'t have an account? ',
-          style: TextStyle(
-            fontSize: getProportionateScreenWidth(16)
-          ),
+          style: TextStyle(fontSize: getProportionateScreenWidth(16)),
         ),
         GestureDetector(
-          onTap: () => Navigator.popAndPushNamed(
-            context, ForgotPasswordScreen.routeName),
+          onTap: () =>
+              Navigator.popAndPushNamed(context, RegisterScreen.routeName),
           child: Text(
             'Register',
             style: TextStyle(
-              fontSize: getProportionateScreenWidth(16),
-              color: primaryAuthColor
-            ),
+                fontSize: getProportionateScreenWidth(16),
+                color: primaryAuthColor),
           ),
         )
       ],

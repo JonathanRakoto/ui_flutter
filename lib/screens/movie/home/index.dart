@@ -6,6 +6,7 @@ import 'package:ui_flutter/constants/size.dart';
 import 'home/../body.dart';
 
 class MovieScreen extends StatelessWidget {
+  static String routeName = '/movie';
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);

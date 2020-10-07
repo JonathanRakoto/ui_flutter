@@ -8,6 +8,7 @@ import 'package:ui_flutter/constants/size.dart';
 import 'body.dart';
 
 class ClockScreen extends StatelessWidget {
+  static String routeName = '/clock';
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
